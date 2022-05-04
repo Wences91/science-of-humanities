@@ -96,12 +96,12 @@ ui <- navbarPage(
                   tags$h2('Authors'),
                   fluidRow(
                     column(width=6,
-                           tags$h3('Wenceslao Arroy-Machado'),
+                           tags$h3('Wenceslao Arroyo-Machado'),
                            HTML('Wenceslao Arroyo Machado is PhD student in Information and Communication Technologies, supported by a FPU predoctoral fellowship at the Department of Information and Communication of the University of Granada (UGR). He holds a degree in Information and Documentation and a master’s degree in Data Science and Computer Engineering (UGR). He has worked as a researcher in the project Knowmetrics – evaluation of knowledge in the digital society funded by the BBVA Foundation and as technical support staff in Medialab UGR. His works focus on scientometrics and other areas derived related to the new paradigm of altmetrics and data science.')
                            ),
                     column(width=6,
                            tags$h3('Nicolas Robinson-Garcia'),
-                           HTML('Nicolas Robinson-Garcia is a researcher in the field of bibliometrics and research evaluation. He currently enjoys a Ramón y Cajal grant at the University of Granada (Spain). He worked previously as a Marie Sklodowska-Curie Fellow at Delft Institute of Applied Mathematics, TU Delft (Netherlands), the School of Public Policy at Georgia Institute of Technology and at INGENIO (CSIC-UPV) in Spain. He holds a PhD on Social Sciences at the University of Granada. He is member of the Steering Committee of the European Summer School for Scientometrics. He is Associate Editor of the journal Frontiers in Research Metrics and Analytics in the section on ‘Research Assessment’ and member of the editorial board of Research Evaluation, Quantitative Science Studies and Scientometrics.')
+                           HTML('Nicolas Robinson-Garcia is a researcher in the field of bibliometrics and research evaluation. He currently enjoys a Ramón y Cajal grant at the University of Granada (Spain). He worked previously as a Marie Sklodowska-Curie Fellow at Delft Institute of Applied Mathematics, TU Delft (Netherlands), the School of Public Policy at Georgia Institute of Technology and at INGENIO (CSIC-UPV) in Spain. He holds a PhD on Social Sciences at the University of Granada. He is member of the Steering Committee of the European Summer School for Scientometrics. He is Associate Editor on Open Science and New Metrics of the journal Scientometrics and member of the editorial board of Research Evaluation and Quantitative Science Studies.')
                            )),
                   fluidRow(column(width=12,
                                   tags$div(

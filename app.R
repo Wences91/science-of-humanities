@@ -94,20 +94,21 @@ ui <- navbarPage(
                   HTML('The visualizations and data available here are part of the work <b>Towards a Science of Humanities: How Big Data can solve the limitations of scientometrics</b>, developed as part of the project <a href="https://compare-project.eu/about/"><b>COntextual Mapping of academic Pathways Analysis for Research Evaluation (COMPARE)</b></a> – PID2020-117007RA-I00.'),
                   HTML('Preliminary results were presented in the work in progress <a href="https://doi.org/10.5281/zenodo.5793175"><b>Big Data and the birth of a Science of the Humanities</b></a> at the <i>1st International Conference on Humanities and Big Data in Ibero-America</i> organized by IberLab UGR which took place on 16-17th December, 2021 in Granada. The final results of this study will be published in a forthcoming book titled <b>Humanities and Big Data in Ibero-America</b> to be published by De Gruyter, and edited by Ana Gallego-Cuiñas and Daniel Torres-Salinas.'),
                   tags$h2('Authors'),
-                  column(width=6,
-                         tags$h3('Wenceslao Arroy-Machado'),
-                         HTML('Wenceslao Arroyo Machado is PhD student in Information and Communication Technologies, supported by a FPU predoctoral fellowship at the Department of Information and Communication of the University of Granada (UGR). He holds a degree in Information and Documentation and a master’s degree in Data Science and Computer Engineering (UGR). He has worked as a researcher in the project Knowmetrics – evaluation of knowledge in the digital society funded by the BBVA Foundation and as technical support staff in Medialab UGR. His works focus on scientometrics and other areas derived related to the new paradigm of altmetrics and data science.')
-                  ),
-                  column(width=6,
-                         tags$h3('Nicolas Robinson-Garcia'),
-                         HTML('Nicolas Robinson-Garcia is a researcher in the field of bibliometrics and research evaluation. He currently enjoys a Ramón y Cajal grant at the University of Granada (Spain). He worked previously as a Marie Sklodowska-Curie Fellow at Delft Institute of Applied Mathematics, TU Delft (Netherlands), the School of Public Policy at Georgia Institute of Technology and at INGENIO (CSIC-UPV) in Spain. He holds a PhD on Social Sciences at the University of Granada. He is member of the Steering Committee of the European Summer School for Scientometrics. He is Associate Editor of the journal Frontiers in Research Metrics and Analytics in the section on ‘Research Assessment’ and member of the editorial board of Research Evaluation, Quantitative Science Studies and Scientometrics.')
-                  ),
-                  column(width=12,
-                         tags$div(
-                           tags$img(src = 'https://raw.githubusercontent.com/Wences91/science-of-humanities/main/images/compare_logo.png', width=150, style='padding-right:25px'),
-                           tags$img(src = 'https://raw.githubusercontent.com/Wences91/science-of-humanities/main/images/ugr_logo.png', height=50, style='padding-right:25px'),
-                           style='padding-top:75px;text-align:right')
-                         )
+                  fluidRow(
+                    column(width=6,
+                           tags$h3('Wenceslao Arroy-Machado'),
+                           HTML('Wenceslao Arroyo Machado is PhD student in Information and Communication Technologies, supported by a FPU predoctoral fellowship at the Department of Information and Communication of the University of Granada (UGR). He holds a degree in Information and Documentation and a master’s degree in Data Science and Computer Engineering (UGR). He has worked as a researcher in the project Knowmetrics – evaluation of knowledge in the digital society funded by the BBVA Foundation and as technical support staff in Medialab UGR. His works focus on scientometrics and other areas derived related to the new paradigm of altmetrics and data science.')
+                           ),
+                    column(width=6,
+                           tags$h3('Nicolas Robinson-Garcia'),
+                           HTML('Nicolas Robinson-Garcia is a researcher in the field of bibliometrics and research evaluation. He currently enjoys a Ramón y Cajal grant at the University of Granada (Spain). He worked previously as a Marie Sklodowska-Curie Fellow at Delft Institute of Applied Mathematics, TU Delft (Netherlands), the School of Public Policy at Georgia Institute of Technology and at INGENIO (CSIC-UPV) in Spain. He holds a PhD on Social Sciences at the University of Granada. He is member of the Steering Committee of the European Summer School for Scientometrics. He is Associate Editor of the journal Frontiers in Research Metrics and Analytics in the section on ‘Research Assessment’ and member of the editorial board of Research Evaluation, Quantitative Science Studies and Scientometrics.')
+                           )),
+                  fluidRow(column(width=12,
+                                  tags$div(
+                                    tags$img(src = 'https://raw.githubusercontent.com/Wences91/science-of-humanities/main/images/compare_logo.png', width=150, style='padding-right:25px'),
+                                    tags$img(src = 'https://raw.githubusercontent.com/Wences91/science-of-humanities/main/images/ugr_logo.png', height=50, style='padding-right:25px'),
+                                    style='padding-top:75px;text-align:right')
+                         ))
            )),
            hr(),
            helpText(HTML('By Wenceslao Arroyo-Machado <a href="https://twitter.com/Wences91"><i class="fab fa-twitter"></i></a> & Nicolas Robinson-Garcia <a href="https://twitter.com/nrobinsongarcia"><i class="fab fa-twitter"></i></a> | <a href="https://github.com/Wences91/science-of-humanities">GitHub</a>')))
@@ -188,7 +189,7 @@ server <- function(input, output) {
     
     output$downloadData <- downloadHandler(
       filename = function() {
-        paste('s.tsv', sep = '')
+        paste('save.tsv', sep = '')
       },
       content = function(file) {
         write.table(df_aux[which(df_aux$area %in% input$area_d & df_aux$year>=input$range_d[1] & df_aux$year<=input$range_d[2]),], file, row.names = FALSE, sep='\t')
